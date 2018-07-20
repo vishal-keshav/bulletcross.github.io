@@ -1,43 +1,87 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#######################
+# Theme Customization #
+#######################
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: BULLETCROSS
-email: bulletcross@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  I am moving from wprdpress hosting to jekyll. I can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+title: Vishal Keshav                             # used in <title> tag & site header
+author: Vishal Keshav                        # used in a <meta> tag & /feed.xml
+description: >                              # used in a <meta> tag & /feed.xml
+  My personal page
+slogan:                            # used in site header, beside title
+avatar: /i/avatar.png                       # used as portrait in site header
+banner: /i/mountains.svg                    # used as background in site header
+url: http://bulletcross.github.io              # used by plugins to generate feed.xml and sitemap.xml
+baseurl: ''                                 # prepended to all absolute filepaths
+repo: https://github.com/bulletcross # used in footer
 
-# Build settings
-markdown: kramdown
-theme: minima
+# Objects listed here will appear in the main nav menu.
+# Exceeding four items may cause problems on the desktop (>900px wide) layout.
+nav_menu:
+  - name: Posts
+    url: /
+    icon: /i/icons.svg#posts # icons should be 24x24 px.
+  - name: Projects
+    url: /projects
+    icon: /i/icons.svg#portfolio
+  - name: GitHub
+    url: https://github.com/bulletcross
+    icon: /i/icons.svg#github
+    outbound: true      # this key sets a link to open in a new window.
+  - name: Contact
+    scheme: mailto      # these keys enable email obfuscation.
+    handle: bulletcross       # you know, to protect you from bots. (handle and domain
+    domain: gmail.com  # are separated in case bots crawl GitHub repos, too.)
+    icon: /i/icons.svg#email
+
+# Objects listed here will appear on the /projects.html page.
+projects:
+  - title: DeepSea Plus Plus
+    teaser: A C++ base tiny deep learning library, uses blaze for blazingly fast mathematics operations.
+    url: https://github.com/bulletcross/TF_vs_Deep
+    role: Creator
+    category: Backend library
+  - title: Xcelerator
+    teaser: A python based framework for learning the modelling of model modelling procedure.
+    url: https://github.com/bulletcross/xcelerator
+    role: Creator
+    category: Framework
+  - title: UVA solutions
+    teaser: Solutions to some of the mind-boggling competitive programming problems.
+    url: https://github.com/bulletcross/UVa
+    role: Solver
+    category: Algorithm
+
+#################
+# Site Settings #
+#################
+
+incremental: true
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - README.md
+  - TODO.md
+
+permalink: /:collection/:path
+
+collections:
+  category: { output: true }
+  tag:      { output: true }
+
+defaults:
+  - scope:  { type:   posts    }
+    values: { layout: post     }
+  - scope:  { type:   tag      }
+    values: { layout: listing  }
+  - scope:  { type:   category }
+    values: { layout: listing  }
+
+sass:
+  sass_dir: _assets/css
+
 plugins:
+  - jekyll-paginate
   - jekyll-feed
+  - jekyll-sitemap
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+paginate: 10
