@@ -8,7 +8,7 @@ description: >                              # used in a <meta> tag & /feed.xml
   My personal page
 slogan:                            # used in site header, beside title
 avatar: /i/avatar.png                       # used as portrait in site header
-banner: /i/mountains.svg                    # used as background in site header
+banner: /i/network.svg                    # used as background in site header
 url: http://bulletcross.github.io              # used by plugins to generate feed.xml and sitemap.xml
 baseurl: ''                                 # prepended to all absolute filepaths
 repo: https://github.com/bulletcross # used in footer
@@ -26,6 +26,9 @@ nav_menu:
     url: https://github.com/bulletcross
     icon: /i/icons.svg#github
     outbound: true      # this key sets a link to open in a new window.
+  - name: About Me
+    url: /about
+    icon: /i/icons.svg#portfolio
   - name: Contact
     scheme: mailto      # these keys enable email obfuscation.
     handle: bulletcross       # you know, to protect you from bots. (handle and domain
@@ -36,16 +39,24 @@ nav_menu:
 projects:
   - title: DeepSea Plus Plus
     teaser: A C++ base tiny deep learning library, uses blaze for blazingly fast mathematics operations.
+            Mathematical in-stability in logrithm and exponentiation were solved, hence enabling the
+            library to do fast arithematic computation during forward and backward propagation without
+            diverging.
     url: https://github.com/bulletcross/TF_vs_Deep
     role: Creator
     category: Backend library
   - title: Xcelerator
     teaser: A python based framework for learning the modelling of model modelling procedure.
+            Library to explore the model efficiency while being under design space of architecture.
+            It takes care of implicit computation capability of hardware while searching for fast
+            architecture. Details will be updated soon...
     url: https://github.com/bulletcross/xcelerator
     role: Creator
     category: Framework
   - title: UVA solutions
-    teaser: Solutions to some of the mind-boggling competitive programming problems.
+    teaser: Solutions to some of the mind-boggling competitive programming problems. Problems ranging
+            from Dynamic Programming to Advanced Graph algorithms are being soved in C++ language.
+            Solutions are self explainatory.
     url: https://github.com/bulletcross/UVa
     role: Solver
     category: Algorithm
