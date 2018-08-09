@@ -28,7 +28,7 @@ nav_menu:
     outbound: true      # this key sets a link to open in a new window.
   - name: About Me
     url: /about
-    icon: /i/icons.svg#portfolio
+    icon: /i/icons.svg#about
   - name: Contact
     scheme: mailto      # these keys enable email obfuscation.
     handle: bulletcross       # you know, to protect you from bots. (handle and domain
@@ -60,6 +60,12 @@ projects:
     url: https://github.com/bulletcross/UVa
     role: Solver
     category: Algorithm
+
+# Objects listed here will appear on the /about.html page.
+projects:
+  - title: Affiliation
+            Institute to which I am affifiated.
+    role: Occupation
 
 #################
 # Site Settings #
